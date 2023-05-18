@@ -11,9 +11,20 @@ const AddToys = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    data.email = user.email;
-    console.log(data);
+  const onSubmit = (data, event) => {
+    const form = event.target;
+    form.reset();
+    fetch("http://localhost:5000/addtoys", {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
 
   return (
@@ -55,9 +66,14 @@ const AddToys = () => {
               {...register("category", { required: true })}
             />
             <input
-              className="text-yellow-300 input input-bordered w-2/3  mt-5"
+              className="text-yellow-300 input input-bordered w-1/3 me-5 mt-5"
               placeholder="Available Quantity"
               {...register("quantity", { required: true })}
+            />
+            <input
+              className="text-yellow-300 input input-bordered w-1/3  mt-5"
+              defaultValue={user?.email}
+              {...register("email", { required: true })}
             />
             <textarea
               className="text-yellow-300 input input-bordered w-9/12 mt-5 pt-2"
