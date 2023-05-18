@@ -13,7 +13,7 @@ const Banner = () => {
         </div>
         <div className="lg:w-1/2 sm:w-full">
           <h1 className="text-5xl font-semibold text-yellow-300">
-            Welcome To Toy Game Parlour
+            Welcome To <br /> Toy Game Parlour
           </h1>
           <p className="py-3 text-white">
             Welcome to Video Parlour, your ultimate destination for all things

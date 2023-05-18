@@ -37,7 +37,7 @@ const Invest = () => {
             />
           </div>
           <div className="lg:w-6/12 sm:w-full">
-            <div className="bg-slate-900 p-8 absolute right-5 w-1/2 border-2 border-yellow-300">
+            <div className="bg-slate-900 p-8 absolute right-24 w-1/2 border-2 border-yellow-300">
               <h2 className="text-3xl text-white font-semibold text-start mb-4">
                 Toys are all your baby need better toys for better growth
               </h2>
