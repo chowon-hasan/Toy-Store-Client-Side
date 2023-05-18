@@ -18,7 +18,7 @@ const Gallary = () => {
   ];
 
   return (
-    <section className="py-8 bg-black-200">
+    <section className="py-8 bg-black">
       <div className="xl:container flex mx-auto">
         <div className="lg:w-9/12 sm:w-full mx-auto">
           <h1 className="text-5xl font-semibold text-yellow-300 text-center my-12">
@@ -31,7 +31,7 @@ const Gallary = () => {
               {image.map((image, i) => {
                 return (
                   <img
-                    className="border-y-2 border-indigo-500"
+                    className="border-y-4 border-yellow-500"
                     key={i}
                     src={image}
                     alt=""
