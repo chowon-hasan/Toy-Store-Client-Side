@@ -13,7 +13,6 @@ import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
-  console.log(user);
 
   const handleLogout = () => {
     logout();
@@ -21,7 +20,7 @@ const Header = () => {
 
   return (
     <div className="bg-white">
-      <div className="bg-yellow-300">
+      <div className="bg-yellow-500">
         <div className=" lg:w-1/4 mx-auto text-black">
           <Marquee>
             <p>
@@ -59,33 +58,52 @@ const Header = () => {
         {/* navbar for dextop */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Blog</a>
-            </li>
-            <li>
-              <a>All Toys</a>
-            </li>
-            <li>
-              <a>My Toys</a>
-            </li>
+            <Link to="/" className="mx-2 text-black font-semibold">
+              Home
+            </Link>
+            <Link to="blog" className="mx-2 text-black font-semibold">
+              Blog
+            </Link>
+            <Link to="allToys" className="mx-2 text-black font-semibold">
+              All Toys
+            </Link>
+            {user ? (
+              <Link to="myToys" className="mx-2 text-black font-semibold">
+                My toys
+              </Link>
+            ) : (
+              ""
+            )}
           </ul>
         </div>
         <div className="navbar-end">
           <Link to="/login">
             {user ? (
-              <button onClick={handleLogout} className="log_btn">
+              <button onClick={handleLogout} className="btn">
                 Log Out
               </button>
             ) : (
-              <button className="log_btn">Log in</button>
+              <button className="btn">Log in</button>
             )}
           </Link>
+          <div className="">
+            {user ? (
+              <div className="avatar online">
+                <div className="w-12 rounded-full ms-5">
+                  <img src={user.photoURL} />
+                </div>
+              </div>
+            ) : (
+              <div className="avatar offline">
+                <div className="w-12 rounded-full ms-5">
+                  <img src="/public/img/noyUser.png" />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-      <div className="bg-yellow-300">
+      <div className="bg-yellow-500">
         <div className=" lg:w-1/4 mx-auto text-black">
           <Marquee direction="right">
             <TbHorseToy className="mx-5" />

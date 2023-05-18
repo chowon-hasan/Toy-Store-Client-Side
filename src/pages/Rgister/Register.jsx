@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -24,7 +25,7 @@ const Register = () => {
 
     createUser(email, pass, name, photo)
       .then((result) => {
-        const createdUser = result.user;
+        const createdUser = result;
         console.log(result);
         form.reset();
       })
@@ -35,6 +36,9 @@ const Register = () => {
 
   return (
     <section className="bg-white pt-12 pb-48">
+      <h1 className="text-center text-yellow-500 text-2xl my-5">
+        for more updates and prices for new toys <br /> Register here
+      </h1>
       <div className="xl:container mx-auto">
         <div className="lg:w-1/2 s:w-full mx-auto">
           <form onSubmit={handleRegister}>
@@ -102,6 +106,14 @@ const Register = () => {
             </div>
             <div className="text-center mt-5">
               <button className="btn btn-wide">Submit</button>
+            </div>
+            <div className="text-center mt-5 text-black">
+              <p>
+                Already have an account?{" "}
+                <Link to="/login" className="text-yellow-500">
+                  Log in Here
+                </Link>
+              </p>
             </div>
           </form>
         </div>

@@ -6,6 +6,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 
 export const AuthContext = createContext(null);
@@ -16,12 +17,44 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const createUser = (email, password) => {
+  const currentUser = auth.currentUser;
+  console.log(currentUser);
+
+  // const createUser = (email, password, name, photo) => {
+  //   setLoading(true);
+  //   return createUserWithEmailAndPassword(auth, email, password);
+  // };
+  const createUser = async (email, password, name, photo) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
+      await updateProfile(user, {
+        displayName: name,
+        photoURL: photo,
+      });
+
+      // Set photoURL separately
+      // if (photo) {
+      //   await user.updateProfile({
+      //   });
+      // }
+
+      // Additional code after user creation, if needed
+
+      return userCredential;
+    } catch (error) {
+      // Handle error, if any
+      console.error(error);
+    }
   };
 
-  const signInUser = (email, password) => {
+  const signInUser = async (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };

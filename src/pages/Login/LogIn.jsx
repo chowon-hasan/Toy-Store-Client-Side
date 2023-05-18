@@ -20,6 +20,7 @@ const LogIn = () => {
     signInUser(email, pass)
       .then((result) => {
         const signedInIser = result.user;
+        form.reset();
       })
       .catch((err) => {
         console.log(err);
@@ -28,7 +29,7 @@ const LogIn = () => {
 
   return (
     <section className="bg-white py-24 pb-48">
-      <h1 className="text-center text-yellow-300 text-2xl my-5">
+      <h1 className="text-center text-yellow-500 text-2xl my-5">
         Log In here and enjoy the toys collection
       </h1>
       <div className="xl:container mx-auto">
@@ -67,10 +68,12 @@ const LogIn = () => {
                 Submit
               </button>
             </div>
-            <div className="">
+            <div className="text-center mt-5 text-black">
               <p>
-                Already have an account?{" "}
-                <Link to="/register">Register here</Link>
+                Don't have an account?{" "}
+                <Link to="/register" className="text-yellow-500">
+                  Register here
+                </Link>
               </p>
             </div>
           </form>
