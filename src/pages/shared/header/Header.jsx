@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./header.css";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -9,12 +9,20 @@ import { MdOutlineToys } from "react-icons/Md";
 import { MdOutlineSmartToy } from "react-icons/Md";
 import { MdSmartToy } from "react-icons/Md";
 import { SiToyota } from "react-icons/Si";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
+  console.log(user);
+
+  const handleLogout = () => {
+    logout();
+  };
+
   return (
     <div className="bg-white">
-      <div className="bg-black py-1">
-        <div className=" lg:w-1/4 mx-auto text-yellow-300">
+      <div className="bg-yellow-300">
+        <div className=" lg:w-1/4 mx-auto text-black">
           <Marquee>
             <p>
               Amazing discounts on sale! Don't miss out on our exclusive offers
@@ -66,13 +74,19 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-yellow-300 hover:bg-yellow-200 text-stone-950 border-0 px-10">
-            Log In
-          </a>
+          <Link to="/login">
+            {user ? (
+              <button onClick={handleLogout} className="log_btn">
+                Log Out
+              </button>
+            ) : (
+              <button className="log_btn">Log in</button>
+            )}
+          </Link>
         </div>
       </div>
-      <div className="bg-black py-1">
-        <div className=" lg:w-1/4 mx-auto text-white">
+      <div className="bg-yellow-300">
+        <div className=" lg:w-1/4 mx-auto text-black">
           <Marquee direction="right">
             <TbHorseToy className="mx-5" />
             <MdToys className="mx-5" />

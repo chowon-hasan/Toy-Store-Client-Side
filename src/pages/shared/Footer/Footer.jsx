@@ -13,9 +13,9 @@ const Footer = () => {
           <div>
             <img src="/public/img/logo.png" className="h-12" alt="" />
             <p>
-              ACME Industries Ltd.
+              Toy Parlour LTD
               <br />
-              Providing reliable tech since 1992
+              Providing reliable toys since 1992
             </p>
             <div className=" flex mt-5">
               <Link>
