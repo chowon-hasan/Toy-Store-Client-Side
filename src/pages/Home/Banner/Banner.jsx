@@ -12,7 +12,7 @@ const Banner = () => {
           <Lottie animationData={banner} loop={true}></Lottie>
         </div>
         <div className="lg:w-1/2 sm:w-full">
-          <h1 className="text-5xl font-semibold text-yellow-300">
+          <h1 className="text-5xl font-semibold text-yellow-500">
             Welcome To <br /> Toy Game Parlour
           </h1>
           <p className="py-3 text-white">

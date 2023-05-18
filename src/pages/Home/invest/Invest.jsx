@@ -4,7 +4,7 @@ const Invest = () => {
   return (
     <section className="py-10 bg-black">
       <div className="">
-        <h1 className="text-5xl font-semibold text-yellow-300 text-center mx-auto my-8">
+        <h1 className="text-5xl font-semibold text-yellow-500 text-center mx-auto my-8">
           It's never been easier <br /> to invest in your kid's toys
         </h1>
         <div className="xl:container flex mx-auto text-center items-center">

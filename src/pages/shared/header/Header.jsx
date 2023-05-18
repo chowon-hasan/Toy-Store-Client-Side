@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./header.css";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaLink } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Marquee from "react-fast-marquee";
 import { TbHorseToy } from "react-icons/Tb";
@@ -61,7 +61,7 @@ const Header = () => {
             <Link to="/" className="mx-2 text-black font-semibold">
               Home
             </Link>
-            <Link to="blog" className="mx-2 text-black font-semibold">
+            <Link to="/blog" className="mx-2 text-black font-semibold">
               Blog
             </Link>
             <Link to="allToys" className="mx-2 text-black font-semibold">
@@ -70,6 +70,13 @@ const Header = () => {
             {user ? (
               <Link to="myToys" className="mx-2 text-black font-semibold">
                 My toys
+              </Link>
+            ) : (
+              ""
+            )}
+            {user ? (
+              <Link to="/addtoys" className="mx-2 text-black font-semibold">
+                Add A toy
               </Link>
             ) : (
               ""
