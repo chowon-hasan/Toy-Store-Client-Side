@@ -7,13 +7,13 @@ import scrollDown from "../../../../public/img/scroll.json";
 const Banner = () => {
   return (
     <section className="banner_bg mx-auto">
-      <div className="xl:container flex mx-auto items-center">
+      <div className="xl:container flex mx-auto items-center gap-4">
         <div className="lg:w-1/2 sm:w-full">
           <Lottie animationData={banner} loop={true}></Lottie>
         </div>
         <div className="lg:w-1/2 sm:w-full">
-          <h1 className="text-5xl font-semibold text-white">
-            Welcome To Video Parlour
+          <h1 className="text-5xl font-semibold text-yellow-300">
+            Welcome To Toy Game Parlour
           </h1>
           <p className="py-3 text-white">
             Welcome to Video Parlour, your ultimate destination for all things
@@ -23,8 +23,13 @@ const Banner = () => {
             blockbusters, heartwarming dramas, thrilling suspense, or
             side-splitting comedies, we've got you covered
           </p>
-          <div className="h-0 mt-5"></div>
-          <Lottie animationData={scrollDown} loop={true}></Lottie>
+          <div className="h-0 mt-5">
+            <Lottie
+              className="h-28"
+              animationData={scrollDown}
+              loop={true}
+            ></Lottie>
+          </div>
         </div>
       </div>
     </section>
