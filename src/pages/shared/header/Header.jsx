@@ -4,8 +4,8 @@ import { FaBars } from "react-icons/fa";
 // FaBars
 const Header = () => {
   return (
-    <div className="bg-cyan-500">
-      <div className="navbar lg:container mx-auto text-neutral-50 py-5">
+    <div className="bg-white">
+      <div className="navbar lg:container mx-auto text-black py-5">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

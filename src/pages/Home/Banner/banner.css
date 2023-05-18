@@ -1,0 +1,11 @@
+.banner_bg {
+  background-image: linear-gradient(#45454564, #a8a8a83d),
+    url(img/game-console-6603120_1920.jpg);
+  min-height: 90vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
