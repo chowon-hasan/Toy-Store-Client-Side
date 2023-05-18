@@ -1,0 +1,10 @@
+.safeKid_bg {
+  background-image: url(/public/img/safekid.jpg);
+  min-height: 70vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
