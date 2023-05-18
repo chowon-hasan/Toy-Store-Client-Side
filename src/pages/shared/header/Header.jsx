@@ -97,7 +97,11 @@ const Header = () => {
             {user ? (
               <div className="avatar online">
                 <div className="w-12 rounded-full ms-5">
-                  <img src={user.photoURL} />
+                  <img
+                    className="tooltip"
+                    data-tip={user?.email}
+                    src={user.photoURL}
+                  />
                 </div>
               </div>
             ) : (
