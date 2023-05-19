@@ -4,7 +4,6 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const AddToys = () => {
   const { user } = useContext(AuthContext);
-  const [ToysData, SetToysData] = useState(null);
   const {
     register,
     handleSubmit,
