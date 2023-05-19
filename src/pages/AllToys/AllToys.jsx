@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
@@ -61,7 +62,9 @@ const AllToys = () => {
                     )}
                   </p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Details</button>
+                    <Link to={`/singletoys/${toys?._id}`}>
+                      <button className="btn btn-primary">Details</button>
+                    </Link>
                   </div>
                 </div>
               </div>

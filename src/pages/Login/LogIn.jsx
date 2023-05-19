@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 
 const auth = getAuth(app);
@@ -13,6 +13,7 @@ const LogIn = () => {
   const provider = new GoogleAuthProvider();
   const [logError, setLogError] = useState("");
   const location = useLocation();
+  const navigate = useNavigate();
   const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
@@ -95,11 +96,11 @@ const LogIn = () => {
               </p>
             </div>
           </form>
-          <div className="">
+          <div className="text-center mt-5 text-yellow-500">
             <p className="mt-3">Or you can sign in with</p>
-            <div className="d-flex">
+            <div className="">
               <div className="">
-                <button className="signup_btn" onClick={handlePopup}>
+                <button className="btn mt-5 text-white" onClick={handlePopup}>
                   <FaGoogle />
                 </button>
               </div>

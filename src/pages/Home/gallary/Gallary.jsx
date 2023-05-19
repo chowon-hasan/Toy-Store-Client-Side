@@ -20,7 +20,7 @@ const Gallary = () => {
   return (
     <section className="py-8 bg-black">
       <div className="xl:container flex mx-auto">
-        <div className="lg:w-9/12 sm:w-full mx-auto">
+        <div className="lg:w-6/12 sm:w-full mx-auto">
           <h1 className="text-5xl font-semibold text-yellow-500 text-center my-12">
             Hot Collections{" "}
           </h1>
