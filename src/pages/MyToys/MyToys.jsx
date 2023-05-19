@@ -1,10 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import "./mytoys.css";
+import { useForm } from "react-hook-form";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   useEffect(() => {
     fetch(`http://localhost:5000/mytoys/${user?.email}`)
@@ -14,6 +26,25 @@ const MyToys = () => {
         console.log(data);
       });
   }, [user]);
+
+  const handleDelete = (id) => {
+    console.log("clicked", id);
+    const proceed = confirm("are you want to sure?");
+    if (proceed) {
+      fetch(`http://localhost:5000/mytoys/${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          console.log(result);
+          if (result.deletedCount > 0) {
+            alert("deleted");
+            const reamining = myToys.filter((toys) => toys._id !== id);
+            setMyToys(reamining);
+          }
+        });
+    }
+  };
 
   return (
     <section>
@@ -58,10 +89,29 @@ const MyToys = () => {
                           <h3 className="font-bold text-lg">
                             Category: {toys.toyName}
                           </h3>
-                          <p className="py-4">
-                            You've been selected for a chance to get one year of
-                            subscription to use Wikipedia for free!
-                          </p>
+                          <form onSubmit={handleSubmit(onSubmit)}>
+                            {/* register your input into the hook by invoking the "register" function */}
+                            <input
+                              {...register("name", { required: true })}
+                              name="name"
+                            />
+                            <input
+                              {...register("email", { required: true })}
+                              name="email"
+                            />
+                            <input
+                              {...register("maka", { required: true })}
+                              name="maka"
+                            />
+
+                            {/* errors will return when field validation fails  */}
+                            {errors.exampleRequired && (
+                              <span>This field is required</span>
+                            )}
+
+                            <input type="submit" className="btn" />
+                          </form>
+
                           <div className="modal-action">
                             <label htmlFor={`my-modal-${i}`} className="btn">
                               Yay!
@@ -72,7 +122,25 @@ const MyToys = () => {
                     </td>
 
                     <td>
-                      <button>delete</button>
+                      <button
+                        onClick={() => handleDelete(toys._id)}
+                        className="btn btn-circle btn-outline"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
                     </td>
                   </tr>
                 ))}
