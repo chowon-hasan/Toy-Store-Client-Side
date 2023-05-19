@@ -68,7 +68,7 @@ const Header = () => {
               All Toys
             </Link>
             {user ? (
-              <Link to="myToys" className="mx-2 text-black font-semibold">
+              <Link to="/mytoys" className="mx-2 text-black font-semibold">
                 My toys
               </Link>
             ) : (
