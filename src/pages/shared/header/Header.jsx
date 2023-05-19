@@ -98,6 +98,7 @@ const Header = () => {
               <div className="avatar online">
                 <div className="w-12 rounded-full ms-5">
                   <img
+                    title={user?.displayName}
                     className="tooltip"
                     data-tip={user?.email}
                     src={user.photoURL}

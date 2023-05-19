@@ -1,14 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
-import { getAuth } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
 
 const auth = getAuth(app);
 
 const LogIn = () => {
   const { signInUser } = useContext(AuthContext);
+  const provider = new GoogleAuthProvider();
+  const [logError, setLogError] = useState("");
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = (event) => {
     event.preventDefault();
@@ -21,9 +26,21 @@ const LogIn = () => {
       .then((result) => {
         const signedInIser = result.user;
         form.reset();
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         console.log(err);
+      });
+  };
+
+  const handlePopup = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const logedUser = result.user;
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        setLogError(error.message);
       });
   };
 
@@ -69,6 +86,7 @@ const LogIn = () => {
               </button>
             </div>
             <div className="text-center mt-5 text-black">
+              <p className="text-danger mt-3">{logError}</p>
               <p>
                 Don't have an account?{" "}
                 <Link to="/register" className="text-yellow-500">
@@ -77,6 +95,16 @@ const LogIn = () => {
               </p>
             </div>
           </form>
+          <div className="">
+            <p className="mt-3">Or you can sign in with</p>
+            <div className="d-flex">
+              <div className="">
+                <button className="signup_btn" onClick={handlePopup}>
+                  <FaGoogle />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
