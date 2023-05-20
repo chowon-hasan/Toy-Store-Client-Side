@@ -27,7 +27,7 @@ const SingleToys = () => {
             <span className="text-yellow-500 text-2xl">{toyName}</span>
           </h1>
           <div className="flex justify-center">
-            <img className="h-96" src={image} alt="" />
+            <img className="h-96 my-8" src={image} alt="" />
           </div>
           <div className="flex justify-between">
             <h1 className="text-black">
