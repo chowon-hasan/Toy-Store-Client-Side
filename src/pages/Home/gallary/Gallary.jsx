@@ -1,4 +1,5 @@
 import React from "react";
+import "./gallary.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const Gallary = () => {
@@ -18,7 +19,7 @@ const Gallary = () => {
   ];
 
   return (
-    <section className="py-8 bg-black">
+    <section className="py-8 bg-black gallary_bg">
       <div className="xl:container flex mx-auto">
         <div className="lg:w-6/12 sm:w-full mx-auto">
           <h1 className="text-5xl font-semibold text-yellow-500 text-center my-12">

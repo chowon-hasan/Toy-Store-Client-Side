@@ -1,8 +1,9 @@
 import React from "react";
+import "./invest.css";
 
 const Invest = () => {
   return (
-    <section className="py-10 bg-black">
+    <section className="py-10 bg-black invest_bg">
       <div className="">
         <h1 className="text-5xl font-semibold text-yellow-500 text-center mx-auto my-8">
           It's never been easier <br /> to invest in your kid's toys
