@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import "./mytoys.css";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -73,52 +74,9 @@ const MyToys = () => {
                     <td>{toys?.quantity}</td>
 
                     <td>
-                      {/* The button to open modal */}
-                      <label htmlFor={`my-modal-${i}`} className="btn">
-                        Edit
-                      </label>
-
-                      {/* Put this part before </body> tag */}
-                      <input
-                        type="checkbox"
-                        id={`my-modal-${i}`}
-                        className="modal-toggle"
-                      />
-                      <div className="modal modal-bottom sm:modal-middle">
-                        <div className="modal-box">
-                          <h3 className="font-bold text-lg">
-                            Category: {toys.toyName}
-                          </h3>
-                          <form onSubmit={handleSubmit(onSubmit)}>
-                            {/* register your input into the hook by invoking the "register" function */}
-                            <input
-                              {...register("name", { required: true })}
-                              name="name"
-                            />
-                            <input
-                              {...register("email", { required: true })}
-                              name="email"
-                            />
-                            <input
-                              {...register("maka", { required: true })}
-                              name="maka"
-                            />
-
-                            {/* errors will return when field validation fails  */}
-                            {errors.exampleRequired && (
-                              <span>This field is required</span>
-                            )}
-
-                            <input type="submit" className="btn" />
-                          </form>
-
-                          <div className="modal-action">
-                            <label htmlFor={`my-modal-${i}`} className="btn">
-                              Yay!
-                            </label>
-                          </div>
-                        </div>
-                      </div>
+                      <Link to={`/updateToys/${toys?._id}`}>
+                        <button className="btn">Edit</button>
+                      </Link>
                     </td>
 
                     <td>
