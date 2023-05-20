@@ -59,11 +59,20 @@ const AddToys = () => {
               placeholder="Rating"
               {...register("rating", { required: true })}
             />
-            <input
+            {/* <input
               className="text-yellow-300 input input-bordered w-1/3 mt-5"
               placeholder="Category"
               {...register("category", { required: true })}
-            />
+            /> */}
+            <select
+              className="text-yellow-300 input input-bordered w-1/3 mt-5"
+              {...register("category")}
+            >
+              <option value="pubg">Pubg</option>
+              <option value="call of duty">Call of Duty</option>
+              <option value="god of war">God of War</option>
+              <option value="ben 10">Ben 10</option>
+            </select>
             <input
               className="text-yellow-300 input input-bordered w-1/3 me-5 mt-5"
               placeholder="Available Quantity"

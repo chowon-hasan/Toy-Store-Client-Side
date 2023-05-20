@@ -16,12 +16,12 @@ const Register = () => {
 
     // console.log(email, name, pass, photo);
 
-    // if (pass < 6) {
-    //   setRegError("Please provide at least 6 characters");
-    // } else if (!/(?=.[A-Z])/.test(pass)) {
-    //   setRegError("Please add at least one uppercase");
-    //   return;
-    // }
+    if (pass < 6) {
+      setRegError("Please provide at least 6 characters");
+    } else if (!/(?=.[A-Z])/.test(pass)) {
+      setRegError("Please add at least one uppercase");
+      return;
+    }
 
     createUser(email, pass, name, photo)
       .then((result) => {
@@ -30,7 +30,7 @@ const Register = () => {
         form.reset();
       })
       .catch((error) => {
-        console.log(error);
+        setRegError(error.message);
       });
   };
 
@@ -49,6 +49,7 @@ const Register = () => {
               <label className="input-group input-group-vertical">
                 <span>Name</span>
                 <input
+                  required
                   type="text"
                   name="name"
                   placeholder="eg: jack kellis"
@@ -64,6 +65,7 @@ const Register = () => {
               <label className="input-group input-group-vertical">
                 <span>Email</span>
                 <input
+                  required
                   type="email"
                   name="email"
                   placeholder="example@gmai.com"
@@ -79,6 +81,7 @@ const Register = () => {
               <label className="input-group input-group-vertical">
                 <span>Password</span>
                 <input
+                  required
                   type="password"
                   name="pass"
                   placeholder="Type Your PassWord"

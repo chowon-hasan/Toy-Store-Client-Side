@@ -1,0 +1,7 @@
+.react-tabs__tab-panel--selected {
+  display: flex;
+}
+.tab_box {
+  width: 45%;
+  margin: 20px 0;
+}

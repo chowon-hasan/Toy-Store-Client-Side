@@ -30,7 +30,7 @@ const LogIn = () => {
         navigate(from, { replace: true });
       })
       .catch((err) => {
-        console.log(err);
+        setLogError(err.message);
       });
   };
 
@@ -60,6 +60,7 @@ const LogIn = () => {
               <label className="input-group input-group-vertical border-roundedborder-yellow-300">
                 <span>Email</span>
                 <input
+                  required
                   type="email"
                   name="email"
                   placeholder="info@site.com"
@@ -74,6 +75,7 @@ const LogIn = () => {
               <label className="input-group input-group-vertical border-roundedborder-yellow-300">
                 <span>Email</span>
                 <input
+                  required
                   type="password"
                   name="password"
                   placeholder="Enter Your Password"
@@ -87,7 +89,7 @@ const LogIn = () => {
               </button>
             </div>
             <div className="text-center mt-5 text-black">
-              <p className="text-danger mt-3">{logError}</p>
+              <p className="text-red-500 my-3">{logError}</p>
               <p>
                 Don't have an account?{" "}
                 <Link to="/register" className="text-yellow-500">
