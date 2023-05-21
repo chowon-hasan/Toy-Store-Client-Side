@@ -1,0 +1,11 @@
+.error_page {
+  background-image: linear-gradient(#00000070, #00000075),
+    url(/public/img/error-2129569_1920.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

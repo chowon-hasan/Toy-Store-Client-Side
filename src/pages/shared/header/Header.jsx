@@ -61,7 +61,7 @@ const Header = () => {
             <Link to="/" className="mx-2 text-black font-semibold">
               Home
             </Link>
-            <Link to="/blog" className="mx-2 text-black font-semibold">
+            <Link to="/blogs" className="mx-2 text-black font-semibold">
               Blog
             </Link>
             <Link to="/alltoys" className="mx-2 text-black font-semibold">

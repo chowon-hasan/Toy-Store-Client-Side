@@ -54,6 +54,9 @@ const Footer = () => {
       <div className="bg-yellow-500 py-1">
         <div className=" lg:w-1/4 mx-auto text-black"></div>
       </div>
+      <div className="text-center text-black py-2">
+        <p>&copy; All reserverd by Toy parlour inc.</p>
+      </div>
     </section>
   );
 };

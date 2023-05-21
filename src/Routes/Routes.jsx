@@ -9,11 +9,14 @@ import MyToys from "../pages/MyToys/MyToys";
 import PrivateRoute from "./PrivateRoute";
 import SingleToys from "../pages/SingleToys/SingleToys";
 import UpdateToys from "../pages/UpadetToys/UpdateToys";
+import Blogs from "../pages/Blogs page/Blogs";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -44,6 +47,10 @@ const router = createBrowserRouter([
         element: <UpdateToys></UpdateToys>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/singletoys/${params.id}`),
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
       },
       {
         path: "/singletoys/:id",
