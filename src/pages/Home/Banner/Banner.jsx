@@ -3,15 +3,17 @@ import "./banner.css";
 import Lottie from "lottie-react";
 import banner from "../../../../public/img/banner.json";
 import scrollDown from "../../../../public/img/scroll.json";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Banner = () => {
   return (
     <section className="banner_bg mx-auto">
       <div className="xl:container flex mx-auto items-center gap-4">
-        <div className="lg:w-1/2 sm:w-full">
+        <div className="lg:w-1/2 sm:w-full" data-aos="zoom-in">
           <Lottie animationData={banner} loop={true}></Lottie>
         </div>
-        <div className="lg:w-1/2 sm:w-full">
+        <div className="lg:w-1/2 sm:w-full " data-aos="zoom-in">
           <h1 className="text-5xl font-semibold text-yellow-500">
             Welcome To <br /> Toy Game Parlour
           </h1>

@@ -1,6 +1,8 @@
 import React from "react";
 import "./gallary.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Gallary = () => {
   const image = [
@@ -32,6 +34,7 @@ const Gallary = () => {
               {image.map((image, i) => {
                 return (
                   <img
+                    data-aos="zoom-in"
                     className="border-y-4 border-yellow-500"
                     key={i}
                     src={image}
