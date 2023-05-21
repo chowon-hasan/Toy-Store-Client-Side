@@ -9,11 +9,11 @@ import "aos/dist/aos.css";
 const Banner = () => {
   return (
     <section className="banner_bg mx-auto">
-      <div className="xl:container flex mx-auto items-center gap-4">
+      <div className="container flex mx-auto items-center gap-4 banner_cont">
         <div className="lg:w-1/2 sm:w-full" data-aos="zoom-in">
           <Lottie animationData={banner} loop={true}></Lottie>
         </div>
-        <div className="lg:w-1/2 sm:w-full " data-aos="zoom-in">
+        <div className="lg:w-1/2 banner_contetnt" data-aos="zoom-in">
           <h1 className="text-5xl font-semibold text-yellow-500">
             Welcome To <br /> Toy Game Parlour
           </h1>

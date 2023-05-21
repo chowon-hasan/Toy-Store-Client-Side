@@ -5,3 +5,12 @@
   width: 45%;
   margin: 20px 0;
 }
+@media (max-width: 575px) {
+  .tab_panell {
+    display: block;
+    padding: 0 10px;
+  }
+  .tab_box {
+    width: 100%;
+  }
+}

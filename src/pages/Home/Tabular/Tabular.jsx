@@ -59,7 +59,7 @@ const Tabular = () => {
               <Tab>Call Of Duty</Tab>
             </TabList>
 
-            <TabPanel className="flex flex-wrap justify-between">
+            <TabPanel className="flex flex-wrap justify-between tab_panell">
               {pubgToys.map((toy, index) => (
                 <div key={index} className="tab_box">
                   <div className="border p-5">

@@ -9,3 +9,14 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 575px) {
+  .banner_bg {
+    padding: 30px 10px;
+  }
+  .banner_cont {
+    flex-direction: column;
+  }
+  .banner_contetnt {
+    text-align: center;
+  }
+}

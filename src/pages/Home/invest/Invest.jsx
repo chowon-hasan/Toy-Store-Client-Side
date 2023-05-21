@@ -8,9 +8,9 @@ const Invest = () => {
         <h1 className="text-5xl font-semibold text-yellow-500 text-center mx-auto my-8">
           It's never been easier <br /> to invest in your kid's toys
         </h1>
-        <div className="xl:container flex mx-auto text-center items-center">
-          <div className="lg:w-6/12 sm:w-full">
-            <div className="bg-slate-900 p-8 absolute w-1/2 border-2 border-yellow-300">
+        <div className="xl:container flex mx-auto text-center items-center invest_parent">
+          <div className="lg:w-6/12 md:w-2xl">
+            <div className="bg-slate-900 p-8 absolute w-1/2 border-2 border-yellow-300 invest_cont">
               <h2 className="text-3xl text-white font-semibold text-start mb-4">
                 Toys are all your baby need better toys for better growth
               </h2>
@@ -24,13 +24,13 @@ const Invest = () => {
               </p>
             </div>
           </div>
-          <div className="lg:w-6/12 sm:w-full">
+          <div className="lg:w-6/12 md:w-full">
             <img src="/public/img/invest-1.jpg" alt="" />
           </div>
         </div>
 
-        <div className="xl:container flex mx-auto text-center items-center">
-          <div className="lg:w-6/12 sm:w-full">
+        <div className="xl:container flex mx-auto text-center items-center invest_parent">
+          <div className="lg:w-6/12 md:w-full">
             <img
               className="float-right"
               src="/public/img/invest-2.jpg"
@@ -38,7 +38,7 @@ const Invest = () => {
             />
           </div>
           <div className="lg:w-6/12 sm:w-full">
-            <div className="bg-slate-900 p-8 absolute right-36 w-1/2 border-2 border-yellow-300">
+            <div className="bg-slate-900 p-8 absolute right-36 w-1/2 border-2 border-yellow-300 invest_cont">
               <h2 className="text-3xl text-white font-semibold text-start mb-4">
                 Toys are all your baby need better toys for better growth
               </h2>
@@ -54,9 +54,9 @@ const Invest = () => {
           </div>
         </div>
 
-        <div className="xl:container flex mx-auto text-center items-center">
+        <div className="xl:container flex mx-auto text-center items-center invest_parent">
           <div className="lg:w-6/12 sm:w-full">
-            <div className="bg-slate-900 p-8 absolute w-1/2 border-2 border-yellow-300">
+            <div className="bg-slate-900 p-8 absolute w-1/2 border-2 border-yellow-300 invest_cont">
               <h2 className="text-3xl text-white font-semibold text-start mb-4">
                 Toys are all your baby need better toys for better growth
               </h2>

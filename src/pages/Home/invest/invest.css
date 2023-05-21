@@ -5,3 +5,13 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+@media (max-width: 575px) {
+  .invest_cont {
+    position: inherit;
+    width: 100%;
+  }
+  .invest_parent {
+    flex-direction: column;
+  }
+}

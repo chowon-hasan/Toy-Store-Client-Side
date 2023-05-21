@@ -40,16 +40,34 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-white"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+              <Link to="/" className="mx-2 text-white font-semibold">
+                Home
+              </Link>
+              <Link to="/blogs" className="mx-2 text-white font-semibold">
+                Blog
+              </Link>
+              <Link to="/alltoys" className="mx-2 text-white font-semibold">
+                All Toys
+              </Link>
+              {user ? (
+                <Link to="/mytoys" className="mx-2 text-white font-semibold">
+                  My toys
+                </Link>
+              ) : (
+                ""
+              )}
+              {user ? (
+                <Link to="/addtoys" className="mx-2 text-white font-semibold">
+                  Add A toy
+                </Link>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
+
           <Link to="/">
             <img className="h-20" src="/public/img/logo.png" alt="" />
           </Link>
