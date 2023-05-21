@@ -8,3 +8,7 @@ h1 {
 p {
   font-family: "Poppins", sans-serif;
 }
+.Toastify__toast-theme--light {
+  background-color: black !important;
+  color: #fff !important;
+}

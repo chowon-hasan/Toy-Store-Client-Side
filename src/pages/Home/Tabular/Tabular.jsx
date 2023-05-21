@@ -59,8 +59,8 @@ const Tabular = () => {
 
             <TabPanel className="flex flex-wrap justify-between">
               {pubgToys.map((toy, index) => (
-                <div className="tab_box">
-                  <div className="border p-5" key={index}>
+                <div key={index} className="tab_box">
+                  <div className="border p-5">
                     <img src={toy.image} className="h-48 mx-auto" alt="" />
                     <h3 className="text-yellow-500 py-3">{toy.toyName}</h3>
                     <div className="flex justify-between">
@@ -88,8 +88,8 @@ const Tabular = () => {
 
             <TabPanel className="flex flex-wrap justify-between">
               {ben10.map((toy, index) => (
-                <div className="tab_box">
-                  <div className="border p-5" key={index}>
+                <div key={index} className="tab_box">
+                  <div className="border p-5">
                     <img src={toy.image} className="h-48" alt="" />
                     <h3 className="text-yellow-500 py-3">{toy.toyName}</h3>
                     <div className="flex justify-between">
@@ -116,8 +116,8 @@ const Tabular = () => {
             </TabPanel>
             <TabPanel className="flex flex-wrap justify-between">
               {godOfWar.map((toy, index) => (
-                <div className="tab_box">
-                  <div className="border p-5" key={index}>
+                <div key={index} className="tab_box">
+                  <div className="border p-5">
                     <img src={toy.image} className="h-48" alt="" />
                     <h3 className="text-yellow-500 py-3">{toy.toyName}</h3>
                     <div className="flex justify-between">
@@ -144,8 +144,8 @@ const Tabular = () => {
             </TabPanel>
             <TabPanel className="flex flex-wrap justify-between">
               {cod.map((toy, index) => (
-                <div className="tab_box">
-                  <div className="border p-5" key={index}>
+                <div key={index} className="tab_box">
+                  <div className="border p-5">
                     <img src={toy.image} className="h-48" alt="" />
                     <h3 className="text-yellow-500 py-3">{toy.toyName}</h3>
                     <div className="flex justify-between">

@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const UpdateToys = () => {
   const singleToys = useLoaderData();
@@ -23,7 +24,10 @@ const UpdateToys = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data.modifiedCount);
+        if (data.modifiedCount > 0) {
+          toast("You Updated product Information Succesfullty");
+        }
       });
   };
 
@@ -86,6 +90,7 @@ const UpdateToys = () => {
                 value="Submit"
                 className="text-center btn btn-wide text-white"
               />
+              <ToastContainer />
             </div>
           </form>
         </div>

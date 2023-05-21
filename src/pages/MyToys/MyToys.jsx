@@ -3,6 +3,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import "./mytoys.css";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -39,9 +40,9 @@ const MyToys = () => {
         .then((result) => {
           console.log(result);
           if (result.deletedCount > 0) {
-            alert("deleted");
             const reamining = myToys.filter((toys) => toys._id !== id);
             setMyToys(reamining);
+            toast("Your Deleted a Product Succesfully");
           }
         });
     }
@@ -55,31 +56,43 @@ const MyToys = () => {
             <table className="table table-compact w-full">
               <thead>
                 <tr>
-                  <th>Seller</th>
-                  <th>Toy Name</th>
-                  <th>Price</th>
-                  <th>Category</th>
-                  <th>Available Quantity</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th className="text-center text-yellow-500">Seller</th>
+                  <th className="text-center text-yellow-500">Toy Name</th>
+                  <th className="text-center text-yellow-500">Price</th>
+                  <th className="text-center text-yellow-500">Category</th>
+                  <th className="text-center text-yellow-500">
+                    Available Quantity
+                  </th>
+                  <th className="text-center text-yellow-500">Edit</th>
+                  <th className="text-center text-yellow-500">Delete</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="bg-white">
                 {myToys.map((toys, i) => (
                   <tr key={i}>
-                    <td>{toys?.seller}</td>
-                    <td>{toys?.toyName}</td>
-                    <td>$ {toys?.price}</td>
-                    <td>{toys?.category}</td>
-                    <td>{toys?.quantity}</td>
+                    <td className="bg-white text-black font-semibold text-center text-lg">
+                      {toys?.seller}
+                    </td>
+                    <td className="bg-white text-black font-semibold text-center text-lg">
+                      {toys?.toyName}
+                    </td>
+                    <td className="bg-white text-black font-semibold text-center text-lg">
+                      $ {toys?.price}
+                    </td>
+                    <td className="bg-white text-black font-semibold text-center text-lg">
+                      {toys?.category}
+                    </td>
+                    <td className="bg-white text-black font-semibold text-center text-lg">
+                      {toys?.quantity}
+                    </td>
 
-                    <td>
+                    <td className="bg-white text-yellow-500 text-center">
                       <Link to={`/updateToys/${toys?._id}`}>
                         <button className="btn">Edit</button>
                       </Link>
                     </td>
 
-                    <td>
+                    <td className="bg-white text-yellow-500 text-center">
                       <button
                         onClick={() => handleDelete(toys._id)}
                         className="btn btn-circle btn-outline"
@@ -99,19 +112,22 @@ const MyToys = () => {
                           />
                         </svg>
                       </button>
+                      <ToastContainer />
                     </td>
                   </tr>
                 ))}
               </tbody>
               <tfoot>
                 <tr>
-                  <th>Seller</th>
-                  <th>Toy Name</th>
-                  <th>Price</th>
-                  <th>Category</th>
-                  <th>Available Quantity</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
+                  <th className="text-center text-yellow-500">Seller</th>
+                  <th className="text-center text-yellow-500">Toy Name</th>
+                  <th className="text-center text-yellow-500">Price</th>
+                  <th className="text-center text-yellow-500">Category</th>
+                  <th className="text-center text-yellow-500">
+                    Available Quantity
+                  </th>
+                  <th className="text-center text-yellow-500">Edit</th>
+                  <th className="text-center text-yellow-500">Delete</th>
                 </tr>
               </tfoot>
             </table>

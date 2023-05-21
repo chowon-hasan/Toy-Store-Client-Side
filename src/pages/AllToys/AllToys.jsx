@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
-  const [searchtext, setsearchText] = useState();
+  const [searchtext, setsearchText] = useState("");
+
   useEffect(() => {
     fetch("http://localhost:5000/alltoys")
       .then((res) => res.json())
@@ -12,6 +13,15 @@ const AllToys = () => {
         console.log(data);
       });
   }, []);
+
+  const handleSearch = () => {
+    fetch(`http://localhost:5000/toysearch/${searchtext}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAllToys(data);
+      });
+  };
+
   return (
     <section className="bg-white py-24">
       <div className="xl:container mx-auto">
@@ -28,7 +38,7 @@ const AllToys = () => {
                 placeholder="Search…"
                 className="input input-bordered"
               />
-              <button className="btn btn-square">
+              <button onClick={handleSearch} className="btn btn-square">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
