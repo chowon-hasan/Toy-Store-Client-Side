@@ -16,7 +16,7 @@ const Tabular = () => {
   const user = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltoys")
+    fetch("https://toy-store-server-iota.vercel.app/alltoys")
       .then((res) => res.json())
       .then((data) => {
         const pubgToys = data.filter(

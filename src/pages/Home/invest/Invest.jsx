@@ -25,17 +25,13 @@ const Invest = () => {
             </div>
           </div>
           <div className="lg:w-6/12 md:w-full">
-            <img src="/public/img/invest-1.jpg" alt="" />
+            <img src="/img/invest-1.jpg" alt="" />
           </div>
         </div>
 
         <div className="xl:container flex mx-auto text-center items-center invest_parent">
           <div className="lg:w-6/12 md:w-full">
-            <img
-              className="float-right"
-              src="/public/img/invest-2.jpg"
-              alt=""
-            />
+            <img className="float-right" src="/img/invest-2.jpg" alt="" />
           </div>
           <div className="lg:w-6/12 sm:w-full">
             <div className="bg-slate-900 p-8 absolute right-36 w-1/2 border-2 border-yellow-300 invest_cont">
@@ -71,7 +67,7 @@ const Invest = () => {
             </div>
           </div>
           <div className="lg:w-6/12 sm:w-full">
-            <img src="/public/img/invest-3.jpg" alt="" />
+            <img src="/img/invest-3.jpg" alt="" />
           </div>
         </div>
       </div>

@@ -16,7 +16,8 @@ const AddToys = () => {
   const onSubmit = (data, event) => {
     const form = event.target;
     form.reset();
-    fetch("http://localhost:5000/addtoys", {
+    singletoys;
+    fetch("https://toy-store-server-iota.vercel.app/addtoys", {
       method: "post",
       headers: {
         "content-type": "application/json",

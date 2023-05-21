@@ -23,7 +23,7 @@ const MyToys = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mytoys/${user?.email}`)
+    fetch(`https://toy-store-server-iota.vercel.app/mytoys/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyToys(data);
@@ -35,7 +35,7 @@ const MyToys = () => {
     console.log("clicked", id);
     const proceed = confirm("are you want to sure?");
     if (proceed) {
-      fetch(`http://localhost:5000/mytoys/${id}`, {
+      fetch(`https://toy-store-server-iota.vercel.app/mytoys/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

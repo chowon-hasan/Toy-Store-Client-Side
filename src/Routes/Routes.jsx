@@ -46,7 +46,9 @@ const router = createBrowserRouter([
         path: "/updateToys/:id",
         element: <UpdateToys></UpdateToys>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/singletoys/${params.id}`),
+          fetch(
+            `https://toy-store-server-iota.vercel.app/singletoys/${params.id}`
+          ),
       },
       {
         path: "/blogs",
@@ -60,7 +62,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/singletoys/${params.id}`),
+          fetch(
+            `https://toy-store-server-iota.vercel.app/singletoys/${params.id}`
+          ),
       },
     ],
   },

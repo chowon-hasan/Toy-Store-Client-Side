@@ -6,18 +6,18 @@ import "aos/dist/aos.css";
 
 const Gallary = () => {
   const image = [
-    "/public/img/pubg.jpg",
-    "/public/img/pubg-2.jpg",
-    "/public/img/pubg-3.jpg",
-    "/public/img/ben.jpg",
-    "/public/img/ben-2.jpg",
-    "/public/img/ben-3.jpg",
-    "/public/img/cod.jpg",
-    "/public/img/cod-2.jpg",
-    "/public/img/cod-3.jpg",
-    "/public/img/gow.jpg",
-    "/public/img/gow-2.jpg",
-    "/public/img/gow-3.jpg",
+    "/img/pubg.jpg",
+    "/img/pubg-2.jpg",
+    "/img/pubg-3.jpg",
+    "/img/ben.jpg",
+    "/img/ben-2.jpg",
+    "/img/ben-3.jpg",
+    "/img/cod.jpg",
+    "/img/cod-2.jpg",
+    "/img/cod-3.jpg",
+    "/img/gow.jpg",
+    "/img/gow-2.jpg",
+    "/img/gow-3.jpg",
   ];
 
   return (

@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="xl:container mx-auto">
         <footer className="footer p-10 bg-white text-black">
           <div>
-            <img src="/public/img/logo.png" className="h-12" alt="" />
+            <img src="/img/logo.png" className="h-12" alt="" />
             <p>
               Toy Parlour LTD
               <br />

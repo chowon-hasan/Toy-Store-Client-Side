@@ -8,7 +8,7 @@ const AllToys = () => {
   const [searchtext, setsearchText] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/alltoys")
+    fetch("https://toy-store-server-iota.vercel.app/alltoys")
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);
@@ -17,7 +17,7 @@ const AllToys = () => {
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toysearch/${searchtext}`)
+    fetch(`https://toy-store-server-iota.vercel.app/toysearch/${searchtext}`)
       .then((res) => res.json())
       .then((data) => {
         setAllToys(data);

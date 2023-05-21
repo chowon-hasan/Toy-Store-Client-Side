@@ -17,7 +17,7 @@ const UpdateToys = () => {
     const description = form.description.value;
     const updateToys = { price, quantity, description };
     console.log(updateToys);
-    fetch(`http://localhost:5000/mytoys/${_id}`, {
+    fetch(`https://toy-store-server-iota.vercel.app/mytoys/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
