@@ -52,6 +52,9 @@ const MyToys = () => {
     <section>
       <div className="xl:container mx-auto">
         <div className="lg:w9/12 sm:w-full py-12">
+          <h1 className="text-5xl font-semibold text-yellow-500 text-center mb-8">
+            My toys Collection
+          </h1>
           <div className="overflow-x-auto">
             <table className="table table-compact w-full">
               <thead>
