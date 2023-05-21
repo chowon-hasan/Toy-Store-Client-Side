@@ -2,8 +2,10 @@ import React from "react";
 import { useLoaderData } from "react-router-dom";
 import Rating from "react-rating";
 import { FaRegStar, FaStar, FaStarHalf } from "react-icons/fa";
+import useTitle from "../Hooks/Hooks";
 
 const SingleToys = () => {
+  useTitle("Single Toys");
   const singleToys = useLoaderData();
   const {
     _id,

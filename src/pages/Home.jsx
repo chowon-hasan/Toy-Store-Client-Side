@@ -4,8 +4,10 @@ import Gallary from "./Home/gallary/Gallary";
 import Safekid from "./Home/safekid/Safekid";
 import Invest from "./Home/invest/Invest";
 import Tabular from "./Home/Tabular/Tabular";
+import useTitle from "./Hooks/Hooks";
 
 const Home = () => {
+  useTitle("Home");
   return (
     <div>
       <Banner></Banner>

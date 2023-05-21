@@ -5,10 +5,12 @@ import app from "../../firebase/firebase.config";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import useTitle from "../Hooks/Hooks";
 
 const auth = getAuth(app);
 
 const LogIn = () => {
+  useTitle("Log In");
   const { signInUser } = useContext(AuthContext);
   const provider = new GoogleAuthProvider();
   const [logError, setLogError] = useState("");

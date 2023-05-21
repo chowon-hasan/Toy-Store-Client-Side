@@ -4,8 +4,10 @@ import "./mytoys.css";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import useTitle from "../Hooks/Hooks";
 
 const MyToys = () => {
+  useTitle("My Toys");
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
 

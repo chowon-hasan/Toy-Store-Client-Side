@@ -1,6 +1,8 @@
 import React from "react";
+import useTitle from "../Hooks/Hooks";
 
 const Blogs = () => {
+  useTitle("Blogs");
   return (
     <section className="bg-slate-900 py-12">
       <div className="xl:container mx-auto">

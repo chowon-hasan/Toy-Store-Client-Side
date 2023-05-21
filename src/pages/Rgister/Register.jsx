@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import useTitle from "../Hooks/Hooks";
 
 const Register = () => {
+  useTitle("Register");
   const { createUser } = useContext(AuthContext);
   const [regError, setRegError] = useState("");
 

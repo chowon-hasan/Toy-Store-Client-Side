@@ -1,8 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import useTitle from "../Hooks/Hooks";
 
 const UpdateToys = () => {
+  useTitle("Update Toys");
   const singleToys = useLoaderData();
   const { _id, toyName, price, quantity, description } = singleToys;
   console.log(singleToys);
