@@ -16,7 +16,6 @@ const AddToys = () => {
   const onSubmit = (data, event) => {
     const form = event.target;
     form.reset();
-    singletoys;
     fetch("https://toy-store-server-iota.vercel.app/addtoys", {
       method: "post",
       headers: {
