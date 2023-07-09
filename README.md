@@ -10,4 +10,4 @@ Purpose of this web application is Displaying toys for kids and and a user can a
 
 Live site Link
 
-- https://toy-parlour-assignment-11.netlify.app/
+- https://toy-parlour-store.netlify.app/
